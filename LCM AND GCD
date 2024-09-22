@@ -1,0 +1,29 @@
+Given two integers a and b, write a function lcmAndGcd() to compute their LCM and GCD.
+
+The function takes two integers a and b as input and returns a list containing their LCM and GCD.
+
+
+
+class Solution {
+    static Long[] lcmAndGcd(Long A , Long B) {
+        // code here
+        Long gcd = gcd(A,B);
+        
+        Long lcm=(A*B)/gcd;
+        
+        Long[] result = new Long[2];
+        
+        result[0]=lcm;
+        result[1]=gcd;
+        
+        return result;
+    }
+     private static Long gcd(Long a, Long b) {
+        while (b != 0) {  
+            Long r = a % b; 
+            a = b;           
+            b = r;          
+        }
+        return a; 
+    }
+};

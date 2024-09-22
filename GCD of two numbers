@@ -1,0 +1,15 @@
+Given two positive integers a and b, find GCD of a and b.
+
+Note: Don't use the inbuilt gcd function
+
+class Solution {
+    public static int gcd(int a, int b) {
+        // code here
+        while(b!=0){
+            int r=a%b;
+            a=b;
+            b=r;
+        }
+        return a;
+    }
+}

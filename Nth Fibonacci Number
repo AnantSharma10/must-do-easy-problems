@@ -1,0 +1,25 @@
+Given a positive integer n, find the nth fibonacci number.
+Since the answer can be very large, 
+return the answer modulo 1000000007.
+
+Note: for the reference of this question take first fibonacci number to be 1.
+
+class Solution {
+    static int nthFibonacci(int n){
+        // code here
+        if(n==1 || n==2){
+            return 1;
+        }
+        
+        int fib[]=new int[n+1];
+        
+        fib[1]=1;
+        fib[2]=1;
+        
+        for(int i=3;i<=n;i++){
+            fib[i]=(fib[i-1]+fib[i-2])%1000000007;
+        }
+        
+        return fib[n];
+    }
+}
